@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
         const readStream = fs.createReadStream(__dirname + '/about.html', 'utf-8')
         readStream.pipe(res)
     } else {
-        res.writeHead(200, {'content-Type': 'text/html'});
+        res.writeHead(404, {'content-Type': 'text/html'});
         const readStream = fs.createReadStream(__dirname + '/404.html', 'utf-8')
         readStream.pipe(res)
     }
@@ -36,4 +36,3 @@ server.listen(3000, () => {
 
 server
 //node const server = http.createServer()
-
